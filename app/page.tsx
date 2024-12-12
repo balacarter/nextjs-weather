@@ -7,7 +7,7 @@ const url =
 const options = {
   method: 'GET',
   headers: {
-    'x-rapidapi-key': `${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`,
+    'x-rapidapi-key': `${process.env.WEATHER_API_KEY}`,
     'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
   },
 };
@@ -15,7 +15,6 @@ const options = {
 export default async function Home() {
   const data = await fetch(url, options);
   const weather: WeatherResponse = await data.json();
-  console.log('weather :>> ', weather);
 
   return (
     <Suspense fallback={<>Loading</>}>
