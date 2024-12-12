@@ -7,7 +7,7 @@ const url =
 const options = {
   method: 'GET',
   headers: {
-    'x-rapidapi-key': '3bcadb2682msh79b4d160e953989p10cd15jsn8ff40558378d',
+    'x-rapidapi-key': `${process.env.WEATHER_API_KEY}`,
     'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
   },
 };

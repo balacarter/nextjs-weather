@@ -1,8 +1,9 @@
 .weatherContainer {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  padding-right: 1.5rem;
+  position: relative;
+  padding: 1.5rem;
+  padding-right: 2rem;
   background-color: white;
   color: darkgray;
 }
@@ -16,13 +17,12 @@
 .weatherLocation {
   display: flex;
   gap: 1rem;
-  
+
 }
 
 .weatherRow {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
   gap: 1rem;
 }

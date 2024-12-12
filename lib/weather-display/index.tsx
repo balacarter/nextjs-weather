@@ -28,7 +28,10 @@ export default function DisplayWeather({
           </span>
         </div>
       </div>
-      <div className={styles.weatherRow}>
+      <div
+        className={styles.weatherRow}
+        style={{ position: 'absolute', bottom: '5px', right: '8px' }}
+      >
         <span>
           {weather.location.name} {weather.location.region}
         </span>
