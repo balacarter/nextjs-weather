@@ -15,6 +15,8 @@ const options = {
 export default async function Home() {
   const data = await fetch(url, options);
   const weather: WeatherResponse = await data.json();
+  console.log('weather :>> ', weather);
+  console.log('process.env.WEATHER_API_KEY :>> ', process.env.WEATHER_API_KEY);
 
   return (
     <Suspense fallback={<>Loading</>}>
