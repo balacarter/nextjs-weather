@@ -1,24 +1,10 @@
 import { Suspense } from 'react';
-import { WeatherResponse } from '@/lib/types';
 import DisplayWeather from '@/lib/weather-display';
 
-const url =
-  'https://weatherapi-com.p.rapidapi.com/current.json?q=Los%20Angeles';
-const options = {
-  method: 'GET',
-  headers: {
-    'x-rapidapi-key': `${process.env.WEATHER_API_KEY}`,
-    'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
-  },
-};
-
 export default async function Home() {
-  const data = await fetch(url, options);
-  const weather: WeatherResponse = await data.json();
-
   return (
     <Suspense fallback={<>Loading</>}>
-      <DisplayWeather weather={weather} />
+      <DisplayWeather />
     </Suspense>
   );
 }
