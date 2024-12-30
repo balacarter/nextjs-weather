@@ -10,3 +10,7 @@
 
 .pageHeading {
 }
+
+.outlet {
+  display: flex;
+}

@@ -4,6 +4,7 @@ import './globals.css';
 import Image from 'next/image';
 import nextJSIcon from '../public/next.svg';
 import styles from './page.module.css';
+import { Nav } from '@/lib/nav';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,7 +34,8 @@ export default function RootLayout({
             <Image src={nextJSIcon} alt="NextJS Icon" />
             <h1>Weather</h1>
           </div>
-          {children}
+          <Nav />
+          <div>{children}</div>
         </div>
       </body>
     </html>

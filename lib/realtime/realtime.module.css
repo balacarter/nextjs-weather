@@ -12,13 +12,24 @@
 
 .weatherTemp {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  row-gap: 0.5rem;
   align-items: center;
+
+  span {
+    flex: 1 0 40%;
+  }
 }
 
-.weatherLocation {
+.inputLocation {
   display: flex;
   gap: 1rem;
+
+  span {
+    display: inline-flex;
+    gap: 0.5rem;
+  }
 
 }
 

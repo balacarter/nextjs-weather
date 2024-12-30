@@ -1,0 +1,9 @@
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .active {
+    color: purple;
+  }
+}

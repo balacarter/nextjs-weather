@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
-import RealtimeWeather from '@/lib/realtime';
+import Forecast from '@/lib/forecast';
 
 export default async function Home() {
   return (
     <Suspense fallback={<>Loading</>}>
-      <RealtimeWeather />
+      <Forecast />
     </Suspense>
   );
 }
