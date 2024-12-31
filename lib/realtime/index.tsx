@@ -4,26 +4,31 @@ import Image from 'next/image';
 import styles from './realtime.module.css';
 import { getWeather } from '@/api';
 import { WeatherResponse } from '../types';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import GlobeIcon from '../../public/globe.svg';
+import {
+  RealTimeContext,
+  RealTimeDispatchContext,
+} from '../context/realtimeWeather';
 
 const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=';
 
 export default function RealtimeWeather() {
   const [location, setLocation] = useState('Los Angeles');
-  const [weather, setWeather] = useState<WeatherResponse | null>(null);
+  const weather = useContext(RealTimeContext);
+  const dispatch = useContext(RealTimeDispatchContext);
 
   useEffect(() => {
     function updateWeather() {
       getWeather<WeatherResponse>(`${url}${encodeURI(location)}`).then(
         (weather) => {
           console.log('weather :>> ', weather);
-          setWeather(weather);
+          dispatch?.({ type: 'set', data: weather });
         }
       );
     }
 
-    updateWeather();
+    // if (!weather) updateWeather();
 
     const refetch = setInterval(() => {
       console.log('refetch');
